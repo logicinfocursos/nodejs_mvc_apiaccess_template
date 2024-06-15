@@ -19,12 +19,14 @@ Isso criará um arquivo package.json na raiz do seu projeto.
 
 ### instalar as dependências iniciais do projeto
 <pre>
-c:\nodemvc> npm i express dotenv axios
+c:\nodemvc> npm i express dotenv axios ejs
 c:\nodemvc> npm i --save-dev nodemon
 </pre>
 
 onde:
 - [express](https://expressjs.com/): responsável pela por enviar e receber requisições http e orquestra as rotas do projeto
+
+- [ejs](https://ejs.co/): é o que template engine e será a forma como conseguiremos deixar os nossos arquivos .html dinâmicos, inserindo código javascript(node)
 
 - [axios](https://axios-http.com/): plugin para acesso a endpoints (até onde eu sei, o axios é o plugin mais usado em projetos node js, principalmente em projetos react js)
 

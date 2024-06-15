@@ -1,26 +1,26 @@
-// src\index.js
-import ProductsController from './controllers/products.controller.js'
-import CategoriesController from './controllers/categories.controller.js'
-import HomeController from './controllers/home.controller.js'
-//import ProductsRepository  from './models/repositories/products.repository.js'
+import express from 'express';
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
-/* const getProducts = async () => {
-    const productsRepository = new ProductsRepository('products')
-    const response = await productsRepository.getAll()
-    console.log(response)
-    return response
-} */
+const require = createRequire(import.meta.url);
 
-/* const products = getProducts()
-products.then(data => console.log(data)) */
+require('dotenv').config();
 
-/* const productsController = new ProductsController()
-const products = productsController.getAll()
-products.then(data => console.log(data)) */
+const port = process.env.PORT || 3111;
 
-/* const categoriesController = new CategoriesController()
-const categories = categoriesController.getAll()
-categories.then(data2 => console.log(data2)) */
+const app = express();
 
-const homeController = new HomeController()
-const home = homeController.view()
+app.set('view engine', 'ejs');
+
+// Get the current directory name
+const dirname = path.dirname(fileURLToPath(import.meta.url));
+app.set('views', path.join(dirname, 'views')); // Set the views directory
+
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
