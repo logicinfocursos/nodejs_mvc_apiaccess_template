@@ -1,3 +1,4 @@
+<!-- src\views\index.ejs -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,7 +10,27 @@
 </head>
 
 <body>
-    <h1>***hello world ****</h1>
+    <h1><%= title %></h1> <!-- Access `title` directly -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <!-- Add more headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(function(product) { %> <!-- Iterate over `products` directly -->
+                <tr>
+                    <td><%= product.id %></td>
+                    <td><%= product.name %></td>
+                    <!-- Add more data cells as needed -->
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
 </body>
 
 </html>
