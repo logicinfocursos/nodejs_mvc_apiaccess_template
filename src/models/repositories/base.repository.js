@@ -43,12 +43,13 @@ class BaseRepository {
 
     async create(dataBody) {
        
-        return await apiPOST({table: dataBody, objToAdd:this.entity})
+        console.log(">> dataBody:", )
+        return await apiPOST({table: this.entity, objToAdd:dataBody})
     }
 
     async update(dataBody) {
 
-        return await apiPUT({table: dataBody, objToUpdate: this.entity})
+        return await apiPUT({table: this.entity, objToUpdate: dataBody})
     
     }
 

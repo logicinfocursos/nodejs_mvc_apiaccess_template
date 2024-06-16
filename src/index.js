@@ -1,5 +1,6 @@
 // src\index.js
 import express from 'express'
+import bodyParser from 'body-parser'
 import { createRequire } from 'module'
 import { fileURLToPath } from 'url'
 import path from 'path'
@@ -21,6 +22,7 @@ app.use(express.static(path.join(dirname, 'public')))
 // Set the views directory
 app.set('views', path.join(dirname, 'views')) 
 
+app.use(bodyParser.urlencoded({ extended: true }))
 // define /routes/router.js para distribuir as rotas da aplicação
 app.use(router)
 
