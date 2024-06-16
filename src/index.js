@@ -1,26 +1,31 @@
 // src\index.js
-import ProductsController from './controllers/products.controller.js'
-import CategoriesController from './controllers/categories.controller.js'
-import HomeController from './controllers/home.controller.js'
-//import ProductsRepository  from './models/repositories/products.repository.js'
+import express from 'express'
+import bodyParser from 'body-parser'
+import { createRequire } from 'module'
+import { fileURLToPath } from 'url'
+import path from 'path'
+import router from './routes/router.js'
 
-/* const getProducts = async () => {
-    const productsRepository = new ProductsRepository('products')
-    const response = await productsRepository.getAll()
-    console.log(response)
-    return response
-} */
+const require = createRequire(import.meta.url)
+require('dotenv').config()
 
-/* const products = getProducts()
-products.then(data => console.log(data)) */
+// Get the current directory name
+const dirname = path.dirname(fileURLToPath(import.meta.url))
 
-/* const productsController = new ProductsController()
-const products = productsController.getAll()
-products.then(data => console.log(data)) */
+const port = process.env.PORT || 3111
 
-/* const categoriesController = new CategoriesController()
-const categories = categoriesController.getAll()
-categories.then(data2 => console.log(data2)) */
+const app = express()
 
-const homeController = new HomeController()
-const home = homeController.view()
+app.set('view engine', 'ejs')
+app.use(express.static(path.join(dirname, 'public')))
+
+// Set the views directory
+app.set('views', path.join(dirname, 'views')) 
+
+app.use(bodyParser.urlencoded({ extended: true }))
+// define /routes/router.js para distribuir as rotas da aplicação
+app.use(router)
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`)
+})

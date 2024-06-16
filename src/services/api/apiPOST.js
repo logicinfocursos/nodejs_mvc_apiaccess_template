@@ -1,5 +1,7 @@
-// src\services\api\apiPOST.js
+// src\services\api\apiPOST.js - logicinfo.com.br
 import { api } from './api.js'
+
+
 
 const apiPOST = async ({ table = '', objToAdd }) => {
 

@@ -1,4 +1,4 @@
-// src\models\entities\product.entity.js
+// src\models\entities\product.entity.js - logicinfo.com.br
 class ProductEntity {
   constructor({ id, name, price, categoryid }) {
     this.id = id

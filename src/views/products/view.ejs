@@ -1,0 +1,12 @@
+<!-- src\views\products\view.ejs  - logicinfo.com.br -->
+<%- include('../components/HTMLHEADER', {title: title})  %>   
+
+    <div class="container">
+
+        <%- include('../components/headPage', {title: title})  %>        
+
+        <%- include('../components/forms', {action: null, formMethod: null, disabled: 'disabled', buttonAction: null,     buttonText: null,     name:product.name, details:product.details})  %>     
+
+    </div>
+
+<%- include('../components/HTMLFOOTER') %>  

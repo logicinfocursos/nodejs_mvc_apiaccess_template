@@ -1,5 +1,7 @@
-// src\services\api\apiDELETE.js
+// src\services\api\apiDELETE.js - logicinfo.com.br
 import { api } from './api.js'
+
+
 
 const apiDELETE = async ({ table, id }) => {
 

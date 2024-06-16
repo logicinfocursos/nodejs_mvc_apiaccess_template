@@ -1,8 +1,10 @@
-// src\models\repositories\base.repository.js
+// src\models\repositories\base.repository.js - logicinfo.com.br
 import { apiGET } from '../../services/api/apiGET.js'
 import { apiPOST } from '../../services/api/apiPOST.js'
 import { apiPUT } from '../../services/api/apiPUT.js'
 import { apiDELETE } from '../../services/api/apiDELETE.js'
+
+
 
 class BaseRepository {    
 
@@ -43,12 +45,13 @@ class BaseRepository {
 
     async create(dataBody) {
        
-        return await apiPOST({table: dataBody, objToAdd:this.entity})
+        console.log(">> dataBody:", )
+        return await apiPOST({table: this.entity, objToAdd:dataBody})
     }
 
     async update(dataBody) {
 
-        return await apiPUT({table: dataBody, objToUpdate: this.entity})
+        return await apiPUT({table: this.entity, objToUpdate: dataBody})
     
     }
 
