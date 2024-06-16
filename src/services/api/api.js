@@ -1,6 +1,8 @@
-// src\services\api\api.js
+// src\services\api\api.js - logicinfo.com.br
 import axios from 'axios'
 import { createRequire } from 'module'
+
+
 
 const require = createRequire(import.meta.url)
 

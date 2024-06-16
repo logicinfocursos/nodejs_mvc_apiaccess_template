@@ -2,12 +2,104 @@
 [nodejs_mvc_apiaccess_template](https://github.com/logicinfocursos/nodejs_mvc_apiaccess_template.git)
 [github](https://github.com/logicinfocursos?tab=repositories)
 
-Esse projeto visa mostrar como usar a estrutura mvc em um projeto que acessa dados de uma api através do axios.
+Esse projeto visa mostrar como usar a estrutura mvc em um projeto que acessa dados de uma api através do [axios](https://axios-http.com/docs/intro) e usa o template engine [ejs](https://ejs.co/#promo) para exibir as telas deixando o html "interativo".
+
+O código ainda não está completo, para um crud completo é necessário ainda implementar a edição e exclusão, enquanto eu não concluir o projeto, que tal ter essas funcionalidades como um desafio pra você?
+
+Ao contrário do que muitos pensam, ao usar um template engine (estamos usando o [ejs](https://ejs.co/#promo)), é possível criar um projeto full stack em [node js](https://nodejs.org/en) , pois conseguimos criar a aplicação web, a api e o backend usando uma única linguagem, o javascript.
+
+Outro ponto importante é que o ejs](https://ejs.co/#promo) é um template engine muito fácil de implementar, você não precisa gastar horas para aprender. Outro template engine bem utilizado é o [handlebars](https://handlebarsjs.com/), ele tem uma série de recursos interessantes, mas consequentemente a sua curva de aprendizagem é maior.
+
+Nesse projeto também usamos o [bootstrap](https://getbootstrap.com/) que é o framework css mais usado, mas existem várias outra opções.
+
+Se adicionarmos ainda bibliotecas [node js](https://nodejs.org/en) como [react](https://pt-br.legacy.reactjs.org/), [vue](https://vuejs.org/), [svelte](https://svelte.dev/), [angular](https://angularjs.org/), o poder do [node js](https://nodejs.org/en) é catapultado. Ainda existem soluções node para criar apps para celulares também usando [javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), vide o [react native](https://reactnative.dev/).
 
 Espero que esse código possa ser usado para você como uma espécie de template ou skeleton "coringa" como um ponto de partida para os seus próximos projetos.
 
+# telas do projeto
+<img src="https://logicinfo.com.br/assets/images/postedingithub/productList.jpg">
+<small>tela com a lista de registros obtidos na api</small>
+<br/>
+<br/>
+
+<img src="https://logicinfo.com.br/assets/images/postedingithub/producView.jpg">
+<small>tela de consulta</small>
+<br/>
+<br/>
+
+<img src="https://logicinfo.com.br/assets/images/postedingithub/productAdd.jpg">
+<small>criar novo produto</small>
+<br/>
+<br/>
+
+### árvore de diretórios do projeto
+<pre>
+.
+├── .env
+├── package.json
+└── src
+    ├── controllers
+    │   └── home.controller.js
+    ├── models
+    │   ├── entities
+    │   │   ├── category.entity.js
+    │   │   └── product.entity.js
+    │   └── repositories
+    │       ├── base.repository.js
+    │       └── categories.repository.js
+    ├── public
+    │   ├── scripts
+    │   │   └── script.js
+    │   └── styles
+    │       └── style.css
+    ├── routes
+    │   └── router.js
+    ├── services
+    │   ├── api
+    │   │   ├── api.js
+    │   │   ├── apiDELETE.js
+    │   │   └── apiPOST.js
+    │   └── apiGET.js
+    ├── views
+    │   ├── components
+    │   │   ├── forms.ejs
+    │   │   ├── headPage.ejs
+    │   │   ├── HTMLFOOTER.ejs
+    │   │   └── HTMLHEADER.ejs
+    │   ├── products
+    │   │   ├── add.ejs
+    │   │   └── view.ejs
+    │   └── index.ejs
+    └── index.js
+</pre>
+
+### arquivos do projeto
+<pre>
+src\controllers\home.controller.js
+src\models\entities\category.entity.js
+src\models\entities\product.entity.js
+src\models\repositories\base.repository.js
+src\models\repositories\categories.repository.js
+src\public\styles\style.css
+src\public\scripts\script.js
+src\routes\router.js
+src\services\api\api.js
+src\services\api\apiDELETE.js
+src\services\apiGET.js
+src\services\api\apiPOST.js
+src\views\components\forms.ejs
+src\views\components\headPage.ejs
+src\views\components\HTMLFOOTER.ejs
+src\views\components\HTMLHEADER.ejs
+src\views\products\add.ejs
+src\views\index.ejs
+src\views\products\view.ejs
+src\index.js
+package.json
+.env
+</pre>
 ### criar o projeto node js
-1- inicializar o projeto:
+inicializar o projeto:
 
 <pre>
 c:\> mkdir apiacess
@@ -72,9 +164,7 @@ onde:
 - "scripts": o projeto terá duas formas de execução: "start" - execução padrão e "dev" - através do nodemon
 
 
-### nosso primeiro hello world
-Pronto, agora podemos executar o nosso projeto pela primeira vez:
-
+### executar o projeto
 <pre>
 c:\nodemvc> npm run dev
 </pre>
@@ -92,13 +182,13 @@ no terminal teremos um resultado semelhante a esse:
 
 </pre>
 
-se tudo der certo e a consulta ao endpoint usado trouxer algum resultado, o mesmo será exibido no terminal
+se tudo der certo e a consulta ao endpoint usado trouxer algum resultado, o projeto está pronto
 
-# baixar o projeto no github
+# baixando o projeto no github
 
-[nodejs_apiGet_example](https://github.com/logicinfocursos/nodejs_apiGet_example.git).
+download do código:[nodejs_apiGet_example](https://github.com/logicinfocursos/nodejs_apiGet_example.git): [https://github.com/logicinfocursos/nodejs_apiGet_example.git](https://github.com/logicinfocursos/nodejs_apiGet_example.git)
 
-se você optar por clonar o projeto ou baixar o arquivo .zip, não se esqueça de gerar a pasta node_modules para obter os plugins usados no projeto, para tanto digitar no terminal:
+ao clonar o projeto ou baixar o arquivo .zip, não se esqueça de gerar a pasta node_modules para obter os plugins usados no projeto, para tanto digitar no terminal:
 <pre>
 c:\nodemvc> npm i
 </pre>
@@ -106,9 +196,12 @@ c:\nodemvc> npm i
 
 # referências
 - [node](https://nodejs.org/en)
+- [javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [ejs](https://ejs.co/#promo)
 - [axios](https://axios-http.com/)
 - [express](https://expressjs.com/en/starter/hello-world.html)
 - [typescript](https://www.typescriptlang.org/docs/)
+- [bootstrap](https://getbootstrap.com/)
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [vscode](https://code.visualstudio.com/download)
 - [postman](https://www.postman.com/downloads/)

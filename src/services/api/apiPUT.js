@@ -1,5 +1,7 @@
-// src\services\api\apiPUT.js
+// src\services\api\apiPUT.js - logicinfo.com.br
 import { api } from './api.js'
+
+
 
 const apiPUT = async ({ table = '', objToUpdate }) => {
 

@@ -1,0 +1,1 @@
+// src\public\scripts\script.js - logicinfo.com.br

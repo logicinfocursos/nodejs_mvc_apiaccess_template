@@ -1,8 +1,10 @@
-// src\models\repositories\base.repository.js
+// src\models\repositories\base.repository.js - logicinfo.com.br
 import { apiGET } from '../../services/api/apiGET.js'
 import { apiPOST } from '../../services/api/apiPOST.js'
 import { apiPUT } from '../../services/api/apiPUT.js'
 import { apiDELETE } from '../../services/api/apiDELETE.js'
+
+
 
 class BaseRepository {    
 

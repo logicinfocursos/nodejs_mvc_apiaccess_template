@@ -1,13 +1,16 @@
-// src\routes\router.js
+// src\routes\router.js - logicinfo.com.br
 import express from 'express'
-import HomeController from '../controllers/home.controller.js'
+import ProductsController from '../controllers/products.controller.js'
+
+
 
 const router = express.Router()
 
-router.get('/', HomeController.list)
-router.get('/home', HomeController.list)
-router.get('/view/:id', HomeController.view)
-router.get('/add', HomeController.add)
-router.post('/save', HomeController.save) // Changed from GET to POST
+router.get('/', ProductsController.list)
+router.get('/home', ProductsController.list)
+router.get('/products', ProductsController.list)
+router.get('/products/:id', ProductsController.view)
+router.get('/add', ProductsController.add)
+router.post('/save', ProductsController.save)
 
 export default router

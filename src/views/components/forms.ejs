@@ -1,3 +1,4 @@
+<!-- src\views\components\forms.ejs  - logicinfo.com.br -->
 <form action="<%= action %>" method="<%= formMethod %>">
     <div class="mb-3">
         <label for="name" class="form-label">nome</label>
@@ -21,9 +22,10 @@
         
     </div>
 
-    <% if(buttonLink) { %>
-        <a href="<%= buttonLink %>" class="btn btn-secondary"><%= buttonText %></a>
-    <% } else { %>
-    <button type="<%= buttonType %>" class="btn btn-primary"><%= buttonText %></button>
+    <a href="/products" class="btn btn-secondary">voltar</a>
+
+    <% if(buttonAction) { %>
+        <button type="submit" class="btn btn-primary"><%= buttonText %></button>
     <% } %>
+
 </form>

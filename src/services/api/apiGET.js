@@ -1,5 +1,7 @@
-// src\services\apiGET.js
+// src\services\apiGET.js - logicinfo.com.br
 import { api } from './api.js'
+
+
 
 const apiGET = async ({ table = '', searchID = '', searchField = 'id' }) => {
 
