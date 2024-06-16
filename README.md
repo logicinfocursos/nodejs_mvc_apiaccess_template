@@ -8,7 +8,7 @@ O código ainda não está completo, para um crud completo é necessário ainda 
 
 Ao contrário do que muitos pensam, ao usar um template engine (estamos usando o [ejs](https://ejs.co/#promo)), é possível criar um projeto full stack em [node js](https://nodejs.org/en) , pois conseguimos criar a aplicação web, a api e o backend usando uma única linguagem, o javascript.
 
-Outro ponto importante é que o ejs](https://ejs.co/#promo) é um template engine muito fácil de implementar, você não precisa gastar horas para aprender. Outro template engine bem utilizado é o [handlebars](https://handlebarsjs.com/), ele tem uma série de recursos interessantes, mas consequentemente a sua curva de aprendizagem é maior.
+Outro ponto importante é que o [ejs](https://ejs.co/#promo) é um template engine muito fácil de implementar, você não precisa gastar horas para aprender. Outro template engine bem utilizado é o [handlebars](https://handlebarsjs.com/), ele tem uma série de recursos interessantes, mas consequentemente a sua curva de aprendizagem é maior.
 
 Nesse projeto também usamos o [bootstrap](https://getbootstrap.com/) que é o framework css mais usado, mas existem várias outra opções.
 
